@@ -1,0 +1,61 @@
+/*CSS Reference file
+
+CSS can be one of the more confusing features of web development. As a general rule of 
+thumb, try to keep universal styles within the css file itself,and any element-specific 
+files can be applied in the html file. Overtime, this will mean that once you configure 
+your overall style in the style.css file, you will be spending less and less time there, 
+and more focused in your html file.
+
+For example, our first few examples stylizes elements to use Grids. We have a couple elements 
+that are using the grid pattern, so we defined that style here. However, there are certain 
+grid items that are used as an example in grid item positioning and styling. These styles 
+only occur once in that specific example. There's no point in making it universal. Adding 
+those "1 time use" styles would be impractical here, and would cause a lot of clutter. It's 
+better to apply those minor style changes in the element itself.
+
+*/
+
+*
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body
+{
+    width:50%;
+}
+
+.grid
+{
+    display:grid;
+}
+
+/*careful with nested divs here, for now the standard will be 1 div under an element with the grid class*/
+.apply-grid-main-style
+{
+    gap:4px;
+    aspect-ratio: 1;
+}
+
+.apply-grid-main-style div
+{
+    border:solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-area-example
+{
+    width:400px;
+    grid-template-areas: 
+    "item2 item8 item7" 
+    "item1 item5 item4"
+    "item3 item5 item6";
+}
+
+.text-align-center
+{
+    text-align: center;
+}
+

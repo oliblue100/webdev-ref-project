@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference Site</title>
+
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <h1>HTML Reference Page</h1>
+  <h2>Use this page to refer back to if you need a refresher.</h2>
+  <br>
+  <p>
+    Sometimes when working on a project, its easy to forget how to use different features. Especially having to learn multiple languages like HTML, CSS, and Javascript. 
+    While they all work together, its hard to memorize everything. The sheer amount of features available is enourmous, its impossible to memorize everything. Even some
+    basic features are hard to memorize. Personally, although I've been developing for quite some time, I still forget how to link a basic stylesheet. (<i>"Its not 'url', its 'href!!!'"</i>)
+    This is a somewhat of an HTML cheatsheet that you can use to refer back to incase I need to refresh my memory on how different features work.</p>
+  <p>
+    Be sure to look at html source! There are comments there that provide more detailed information.
+  </p>
+  <br>
+  <h3>Here's an example of how this page may be used:</h3>
+  <div>
+    <h2>CSS Grids</h2>
+    <h3>Here we see a basic CSS grid:</h3>
+    <div class="grid text-align-center apply-grid-main-style" style="grid-template-columns: 1fr 1fr 1fr; width:400px">
+      <div><b>Item 1</b></div>
+      <div><b>Item 2</b></div>
+      <div><b>Item 3</b></div>
+      <div><b>Item 4</b></div>
+      <div><b>Item 5</b></div>
+      <div><b>Item 6</b></div>
+      <div><b>Item 7</b></div>
+      <div><b>Item 8</b></div>
+    </div>
+
+    <br>
+
+
+
+    <h3>
+      Some grid properties must be applied to the grid container. for example, we can set the gap size. We can also specify the grid gap to be rows or columns.
+      As you can see, the row gap is smaller than the column gap:
+    </h3>
+    <div class="grid text-align-center apply-grid-main-style" style="grid-template-columns: 1fr 1fr 1fr; width:400px; row-gap: 10px; column-gap: 60px;">
+      <div><b>Item 1</b></div>
+      <div><b>Item 2</b></div>
+      <div><b>Item 3</b></div>
+      <div><b>Item 4</b></div>
+      <div><b>Item 5</b></div>
+      <div><b>Item 6</b></div>
+      <div><b>Item 7</b></div>
+      <div><b>Item 8</b></div>
+    </div>
+
+    <h3>
+      Other grid properties must be applied to the items themselves. For example, configuring the 8th item to cover the last two spots.
+    </h3>
+    <div class="grid text-align-center apply-grid-main-style" style="grid-template-columns: 1fr 1fr 1fr; width:400px; ">
+      <div><b>Item 1</b></div>
+      <div><b>Item 2</b></div>
+      <div><b>Item 3</b></div>
+      <div><b>Item 4</b></div>
+      <div><b>Item 5</b></div>
+      <div><b>Item 6</b></div>
+      <div><b>Item 7</b></div>
+      <!--
+        It might sound reversed, but when we make an element span across a row, we need to set the column-start and column-end property.
+        And if you need the element to span across the columns, its the row-start and row-end property that needs to be applied. It might be
+        difficult to wrap your head around, but when you think about it it makes sense. In the following example, we're not really expanding 
+        your grid item to fill in more space in the row, we're allowing it to fit into extra columns.
+      -->
+      <div style="grid-column-start: 2; grid-column-end:4"><b>Item 8</b></div>
+    </div>
+
+
+
+    <h3>
+      Using grid-template-area, we can configure our grid exactly as we want, though it does mean our code might be a little more cluttered:
+    </h3>
+    <!--
+    A note here. Grid area gives us a lot of control but can also cause the most confusion. In this case, we need to add a grid-area name to 
+    every single grid item in order to tell the grid container where exactly to place each item. Otherwise, problems can occur. grid-areas can
+    be used for single grid-items, to specify exactly how many columns and rows they should take. But without the proper configuration, the order
+    of grid items can break.
+
+    Configuring the style and placement of grid items usually just requires lof of trial and error.
+    -->
+    <div class="grid text-align-center apply-grid-main-style grid-area-example">
+      <div style="grid-area: item1;"><b>Item 1</b></div>
+      <div style="grid-area: item2;"><b>Item 2</b></div>
+      <div style="grid-area: item3;"><b>Item 3</b></div>
+      <div style="grid-area: item4;"><b>Item 4</b></div>
+      <div style="grid-area: item5;"><b>Item 5</b></div>
+      <div style="grid-area: item6;"><b>Item 6</b></div>
+      <div style="grid-area: item7;"><b>Item 7</b></div>
+      <div style="grid-area: item8;"><b>Item 8</b></div>
+    </div>
+
+  </div>
+</body>
+</html>
